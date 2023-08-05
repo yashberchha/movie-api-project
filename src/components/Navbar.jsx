@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import Menu from "./Menu";
 import { HiOutlineBars3BottomLeft } from "react-icons/hi2";
+import CardContainer from "./CardContainer";
+import { useEffect } from "react";
 
 export default function Navbar() {
   const [visible, setVisible] = useState(false);
+  const [genre, setGenre] = useState("");
 
   const handleMenu = () => {
     setVisible(!visible);
   };
+
   return (
     <div>
       <div className="w-full h-16 flex justify-center text-purple-600 bg-purple-300">
@@ -28,8 +32,19 @@ export default function Navbar() {
           </div>
         </nav>
       </div>
-      <div className={`transition duration-500 ease-in-out ${visible ? "translate-x-0" : "translate-x-[-2000px]"}`}>
-        <Menu visible={visible} setVisible={setVisible} />
+
+      <div
+        className={`transition duration-500 ease-in-out ${
+          visible ? "translate-x-0" : "translate-x-[-2000px]"
+        }`}
+      >
+        <Menu visible={visible} setVisible={setVisible} setGenre={setGenre} />
+      </div>
+
+      <div>
+        {
+          genre ?  <CardContainer genre={genre} /> : <p>chal nikal</p>
+        }
       </div>
     </div>
   );

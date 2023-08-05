@@ -5,7 +5,6 @@ function App() {
     <div className="bg-purple-400 h-screen">
       <Navbar></Navbar>
     </div>
-    
   );
 }
 

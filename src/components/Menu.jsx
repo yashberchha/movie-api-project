@@ -1,7 +1,7 @@
 import Options from "./Options";
 import result from "../apis/genre";
 
-export default function Menu({visible, setVisible}) {
+export default function Menu({ visible, setVisible, setGenre }) {
   const rawData = result.results;
   let data = [];
   rawData.forEach((element) => {
@@ -17,7 +17,12 @@ export default function Menu({visible, setVisible}) {
           <div className="font-semibold text-4xl text-white">Genre</div>
         </div>
       </div>
-      <Options data={data} visible={visible} setVisible={setVisible} />
+      <Options
+        data={data}
+        visible={visible}
+        setVisible={setVisible}
+        setGenre={setGenre}
+      />
     </div>
   );
 }
