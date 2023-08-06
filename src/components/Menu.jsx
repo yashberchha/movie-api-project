@@ -1,8 +1,9 @@
 import Options from "./Options";
-import result from "../apis/genre";
+import apiData from "../apis/genre";
 
 export default function Menu({ visible, setVisible, setGenre }) {
-  const rawData = result.results;
+
+  const rawData = apiData.results;
   let data = [];
   rawData.forEach((element) => {
     data.push(element.genre);

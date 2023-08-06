@@ -1,6 +1,5 @@
-
 export default function Options({ data, visible, setVisible, setGenre }) {
-  const handleTasks =  (e) => {
+  const handleTasks = (e) => {
     setVisible(!visible);
     const genre = e.target.textContent;
     setGenre(genre);
