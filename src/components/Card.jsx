@@ -1,7 +1,6 @@
 import React from "react";
 
 const Card = (props) => {
-  console.log('props', props);
   const { title, start_year, description, image_url} = props.item;
   return (
     <div>
